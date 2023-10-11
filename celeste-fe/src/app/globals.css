@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.box {
+  --size: 50px;
+  --p: 25px;
+  --R: 55.9px /*sqrt(var(--size)*var(--size) + var(--p)*var(--p))*/;
+  
+  height: 200px;
+
+  -webkit-mask:
+    radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))),blue 99%,#0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)),#0000 99%,red 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
+  background:linear-gradient(90deg,red,blue);  
+  border: none;
+}
+
+.star-div {
+  position: absolute;
+  pointer-events: none;
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 0 15px rgb(0 0 0 / .5));
+  animation: fadeInOut 1s linear infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+      opacity: 0;
+  }
+  20%, 80% {
+      opacity: 1;
+  }
+}
+
+.star {
+  position: absolute;
+  animation: moveShape 1s linear infinite;
+}
+
+@keyframes moveShape {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(100px);
+  }
+}
+
+.body-star {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
