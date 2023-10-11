@@ -1,9 +1,9 @@
 'use client'
-import Cover from '../images/cover.jpg'
+import Cover3 from '../images/cover3.jpg'
 import Cover2 from '../images/cover2.jpg'
-import Image1 from '../images/image1.jpg'
-import Image2 from '../images/image2.jpg'
-import Image3 from '../images/image3.jpg'
+import Image4 from '../images/image4.jpg'
+import Image5 from '../images/image5.jpg'
+import Image7 from '../images/image7.jpg'
 import Image from 'next/image'
 import { useEffect } from 'react';
 
@@ -48,24 +48,24 @@ export default function Home() {
   }, []);
   return (
     <main>
-      <div className='flex h-screen bg-fixed bg-cover bg-center items-center justify-center' style={{ backgroundImage: `url('${Cover.src}')` }}>
-        <div className='bg-neutral-900/75 rounded-lg px-10 py-5 text-4xl text-[#F397AF]'>Pinky’s bouquet</div>
+      <div className='flex h-screen bg-fixed bg-cover bg-center items-center justify-center' style={{ backgroundImage: `url('${Cover3.src}')` }}>
+        <div className='bg-neutral-900/75 rounded-lg px-10 py-5 text-4xl text-[#F397AF]'>Хайртай хүндээ</div>
       </div>
       <div className='flex flex-col gap-5 items-center justify-center bg-neutral-800 pt-10'>
-        <div className='text-2xl p-5 text-[#F397AF]'>Онцлох багцууд</div>
+        <div className='text-2xl p-5 text-[#F397AF]'>Хайртай хүндээ</div>
         <div className='flex items-start justify-center gap-10 pb-20'>
           <div>
-            <Image src={Image1} height={250} className='rounded-lg' />
+            <Image src={Image4} height={250} className='rounded-lg' />
             <div className='pt-3'>Blue hydrangea bouquet</div>
             <div className='pb-3 text-neutral-500'>65.000₮</div>
           </div>
           <div>
-            <Image src={Image2} height={250} className='rounded-lg' />
+            <Image src={Image5} height={250} className='rounded-lg' />
             <div className='pt-3'>Mini rose bouquet</div>
             <div className='pb-3 text-neutral-500'>65.000₮</div>
           </div>
           <div>
-            <Image src={Image3} height={250} className='rounded-lg' />
+            <Image src={Image7} height={250} className='rounded-lg' />
             <div className='pt-3'>Ramashka bouquet</div>
             <div className='pb-3 text-neutral-500'>65.000₮</div>
           </div>

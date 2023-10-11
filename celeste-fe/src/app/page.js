@@ -5,10 +5,12 @@ import Image1 from './images/image1.jpg'
 import Image2 from './images/image2.jpg'
 import Image3 from './images/image3.jpg'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect } from 'react';
-
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
   useEffect(() => {
     window.addEventListener('mousemove', function(e){
       let body = document.querySelector('.body-star');
@@ -46,6 +48,10 @@ export default function Home() {
       },500)
     })
   }, []);
+
+const handleNavigation = () => {
+  router.push('/bagts');
+};
   return (
     <main>
       <div className='flex h-screen bg-fixed bg-cover bg-center items-center justify-center' style={{ backgroundImage: `url('${Cover.src}')` }}>
@@ -76,7 +82,10 @@ export default function Home() {
       </div>
       <div className='flex flex-col gap-5 items-center justify-center bg-neutral-800 pt-5 pb-10'>
         <div className='text-2xl p-5 text-[#F397AF]'>Хүссэн багцаа захиалаарай</div>
-        <div className='text-sm font-semibold py-5 px-10 bg-[#F397AF] text-neutral-900 rounded-lg'>БАГЦ ҮҮСГЭХ</div>
+      
+  <div className="text-sm font-semibold py-5 px-10 bg-[#F397AF] text-neutral-900 rounded-lg" onClick={handleNavigation}>Багц үүсгэх</div>
+
+
       </div>
     </main>
   )
